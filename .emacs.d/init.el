@@ -25,6 +25,7 @@
 
 ;; Evil mode
 (setq evil-toggle-key "C-c v")
+(setq evil-default-state 'emacs)
 (setq evil-want-C-u-scroll t)
 (require 'evil)
 (evil-mode t)
