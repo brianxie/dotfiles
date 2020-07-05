@@ -25,6 +25,4 @@ set softtabstop=2
 set tabstop=2
 
 " Dependencies
-colorscheme molokai
-let g:rehash256=1
-let g:molokai_original=1
+colorscheme onedark
