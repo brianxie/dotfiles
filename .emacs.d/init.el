@@ -7,6 +7,12 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
+;; Update packages
+;; This only needs to be executed once, during the first time that
+;; this init.el is loaded, to ensure that the selected packages are
+;; present.
+(package-refresh-contents)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -19,6 +25,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; Check that all packages are present, and install any that are not.
+(dolist (package package-selected-packages)
+  (unless (package-installed-p package)
+    (package-install pkg)))
 
 ;; Misc
 (global-display-line-numbers-mode t)
