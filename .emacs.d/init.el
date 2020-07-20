@@ -33,6 +33,8 @@
 
 ;; Misc
 (global-display-line-numbers-mode t)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
 
 ;; UI packages
 (load-theme 'atom-one-dark t)
