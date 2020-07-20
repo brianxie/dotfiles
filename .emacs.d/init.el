@@ -27,8 +27,8 @@
  )
 
 ;; Check that all packages are present, and install any that are not.
-(dolist (package package-selected-packages)
-  (unless (package-installed-p package)
+(dolist (pkg package-selected-packages)
+  (unless (package-installed-p pkg)
     (package-install pkg)))
 
 ;; Misc
