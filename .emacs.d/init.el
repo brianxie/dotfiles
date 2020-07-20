@@ -18,7 +18,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (atom-one-dark-theme doom-modeline evil org))))
+ '(package-selected-packages
+   (quote
+    (anzu centaur-tabs company flycheck ivy which-key atom-one-dark-theme doom-modeline evil org))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -31,24 +33,46 @@
   (unless (package-installed-p pkg)
     (package-install pkg)))
 
-;; Misc
-(global-display-line-numbers-mode t)
+;; Built-in configs
+(global-display-line-numbers-mode 1)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
 ;; UI packages
+; Editor theme
+(require 'atom-one-dark-theme)
 (load-theme 'atom-one-dark t)
+; Editor tabs
+(require 'centaur-tabs)
+(centaur-tabs-mode 1)
+; Modeline
+(require 'doom-modeline)
+(doom-modeline-mode 1)
+(require 'anzu)
+(global-anzu-mode 1)
 
-;; Evil mode
+;; Non-editing tools
+; Ivy
+(require 'ivy)
+(ivy-mode 1)
+; Which-key
+(require 'which-key)
+(which-key-mode)
+
+;; Editing tools
+; Flycheck
+(require 'flycheck)
+(global-flycheck-mode 1)
+; Autocompletion
+(require 'company)
+(global-company-mode 1)
+; Evil mode
 (setq evil-toggle-key "C-c v")
 (setq evil-default-state 'emacs)
 (setq evil-want-C-u-scroll t)
 (require 'evil)
-(evil-mode t)
+(evil-mode 1)
 
-;; Org mode
+;; Auxiliary packages
+; Org mode
 (require 'org)
-
-;; Doom modeline
-(require 'doom-modeline)
-(doom-modeline-mode 1)
