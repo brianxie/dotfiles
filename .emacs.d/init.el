@@ -1,9 +1,17 @@
+;;; init.el --- Emacs editor configuration
+
+;;; Commentary:
+;; Emacs editor configuration.
+
+;;; Code:
+
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+;; Add MELPA to list of package archives.
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
@@ -39,34 +47,38 @@
 (menu-bar-mode -1)
 
 ;; UI packages
-; Editor theme
+
+;; Atom One Dark theme
 (require 'atom-one-dark-theme)
 (load-theme 'atom-one-dark t)
-; Editor tabs
+;; Editor tabs
 (require 'centaur-tabs)
 (centaur-tabs-mode 1)
-; Modeline
+;; Modeline
 (require 'doom-modeline)
 (doom-modeline-mode 1)
+;; Modeline incremental search
 (require 'anzu)
 (global-anzu-mode 1)
 
 ;; Non-editing tools
-; Ivy
+
+;; Completion
 (require 'ivy)
 (ivy-mode 1)
-; Which-key
+;; Keybinding help
 (require 'which-key)
 (which-key-mode)
 
 ;; Editing tools
-; Flycheck
+
+;; Syntax checking
 (require 'flycheck)
 (global-flycheck-mode 1)
-; Autocompletion
+;; Autocompletion
 (require 'company)
 (global-company-mode 1)
-; Evil mode
+;; Vim emulation
 (setq evil-toggle-key "C-c v")
 (setq evil-default-state 'emacs)
 (setq evil-want-C-u-scroll t)
@@ -74,5 +86,8 @@
 (evil-mode 1)
 
 ;; Auxiliary packages
-; Org mode
+
+;; Org mode
 (require 'org)
+
+;;; init.el ends here
