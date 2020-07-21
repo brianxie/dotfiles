@@ -1,1 +1,11 @@
-Personal dotfiles
+#+TITLE: Personal dotfiles
+#+AUTHOR: Brian Xie
+#+EMAIL: briancxie@gmail.com
+
+Mostly-portable repository containing personal configuration files.
+
+* Planned improvements
+
+** Emacs
+- Configure packages with ~use-package~
+- Split ~init.el~ into separate modules controlled by feature flags
