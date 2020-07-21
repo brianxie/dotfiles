@@ -5,7 +5,7 @@
 
 ;;; Code:
 
-;; Built-in configs
+;; Configure emacs built-in preferences.
 (setq inhibit-startup-screen t)
 (global-display-line-numbers-mode 1)
 (global-hl-line-mode)
@@ -29,7 +29,8 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (anzu atom-one-dark-theme centaur-tabs company doom-modeline evil flycheck ivy org use-package which-key))))
+    (anzu atom-one-dark-theme centaur-tabs company doom-modeline
+    evil evil-anzu flycheck ivy org use-package which-key))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -38,7 +39,8 @@
  )
 
 ;; Update package archive if currently empty.
-;; Ensures that the local package repository is up-to-date the first time this init.el is run.
+;; Ensures that the local package repository is up-to-date the first
+;; time this init.el is run.
 (when (not package-archive-contents)
   (package-refresh-contents))
 
@@ -50,6 +52,9 @@
 ;; Bootstrap use-package.
 (eval-when-compile (require 'use-package))
 (setq use-package-always-ensure t)
+;; All remaining packages are managed with use-package.
+;; Use the :disabled keyword to selectively disable individual
+;; packages.
 
 ;; UI packages
 
@@ -65,6 +70,8 @@
 ;; Modeline incremental search
 (use-package anzu
   :config (global-anzu-mode 1))
+(use-package evil-anzu
+  :if (featurep 'evil))
 
 ;; Non-editing tools
 
