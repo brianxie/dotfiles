@@ -6,10 +6,11 @@
 ;;; Code:
 
 ;; Built-in configs
+(setq inhibit-startup-screen t)
 (global-display-line-numbers-mode 1)
+(global-hl-line-mode)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(global-hl-line-mode)
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
