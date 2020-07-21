@@ -7,5 +7,7 @@ Mostly-portable repository containing personal configuration files.
 * Planned improvements
 
 ** Emacs
-- Configure packages with ~use-package~
+- (Continuously) configure and install packages
+- Optimize usage of ~use-package~ keywords (e.g. ~:hook~, ~:defines~/~:functions~, ~:pin~, etc.)
+- Eliminate bytecomp warnings on initial bootstrap
 - Split ~init.el~ into separate modules controlled by feature flags
