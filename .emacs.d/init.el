@@ -5,6 +5,12 @@
 
 ;;; Code:
 
+;; Built-in configs
+(global-display-line-numbers-mode 1)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(global-hl-line-mode)
+
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -15,12 +21,6 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
-;; Update packages
-;; This only needs to be executed once, during the first time that
-;; this init.el is loaded, to ensure that the selected packages are
-;; present.
-(package-refresh-contents)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -28,7 +28,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (anzu atom-one-dark-theme centaur-tabs company doom-modeline evil flycheck ivy org which-key))))
+    (anzu atom-one-dark-theme centaur-tabs company doom-modeline evil flycheck ivy org use-package which-key))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -36,59 +36,63 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; Update package archive if currently empty.
+;; Ensures that the local package repository is up-to-date the first time this init.el is run.
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
 ;; Check that all packages are present, and install any that are not.
 (dolist (pkg package-selected-packages)
   (unless (package-installed-p pkg)
     (package-install pkg)))
 
-;; Built-in configs
-(global-display-line-numbers-mode 1)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(global-hl-line-mode)
+;; Bootstrap use-package.
+(eval-when-compile (require 'use-package))
+(setq use-package-always-ensure t)
 
 ;; UI packages
 
 ;; Atom One Dark theme
-(require 'atom-one-dark-theme)
-(load-theme 'atom-one-dark t)
+(use-package atom-one-dark-theme
+  :config (load-theme 'atom-one-dark t))
 ;; Editor tabs
-(require 'centaur-tabs)
-(centaur-tabs-mode 1)
+(use-package centaur-tabs
+  :config (centaur-tabs-mode 1))
 ;; Modeline
-(require 'doom-modeline)
-(doom-modeline-mode 1)
+(use-package doom-modeline
+  :config (doom-modeline-mode 1))
 ;; Modeline incremental search
-(require 'anzu)
-(global-anzu-mode 1)
+(use-package anzu
+  :config (global-anzu-mode 1))
 
 ;; Non-editing tools
 
 ;; Completion
-(require 'ivy)
-(ivy-mode 1)
+(use-package ivy
+  :config (ivy-mode 1))
 ;; Keybinding help
-(require 'which-key)
-(which-key-mode)
+(use-package which-key
+  :config (which-key-mode))
 
 ;; Editing tools
 
 ;; Syntax checking
-(require 'flycheck)
-(global-flycheck-mode 1)
+(use-package flycheck
+  :config (global-flycheck-mode 1))
 ;; Autocompletion
-(require 'company)
-(global-company-mode 1)
+(use-package company
+  :config (global-company-mode 1))
 ;; Vim emulation
-(setq evil-toggle-key "C-c v")
-(setq evil-default-state 'emacs)
-(setq evil-want-C-u-scroll t)
-(require 'evil)
-(evil-mode 1)
+(use-package evil
+  :preface
+    (setq evil-toggle-key "C-c v")
+    (setq evil-default-state 'emacs)
+    (setq evil-want-C-u-scroll t)
+  :config (evil-mode 1))
 
 ;; Auxiliary packages
 
 ;; Org mode
-(require 'org)
+(use-package org)
 
 ;;; init.el ends here
