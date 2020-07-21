@@ -85,7 +85,7 @@
   :config (global-company-mode 1))
 ;; Vim emulation
 (use-package evil
-  :preface
+  :init
     (setq evil-toggle-key "C-c v")
     (setq evil-default-state 'emacs)
     (setq evil-want-C-u-scroll t)
