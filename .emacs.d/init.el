@@ -1,4 +1,4 @@
-;;; init.el --- Emacs editor configuration
+;;; init.el --- Emacs editor configuration -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; Emacs editor configuration.
@@ -90,6 +90,7 @@
   :config (global-flycheck-mode 1))
 ;; Autocompletion
 (use-package company
+  :disabled
   :init
     (setq company-idle-delay 0)
     (setq company-minimum-prefix-length 1)
