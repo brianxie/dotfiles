@@ -8,7 +8,8 @@
 ;; Configure emacs built-in preferences.
 (setq inhibit-startup-screen t)
 (global-display-line-numbers-mode 1)
-(global-hl-line-mode)
+(global-hl-line-mode 1)
+(column-number-mode 1)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
@@ -80,7 +81,7 @@
   :config (ivy-mode 1))
 ;; Keybinding help
 (use-package which-key
-  :config (which-key-mode))
+  :config (which-key-mode 1))
 
 ;; Editing tools
 
@@ -89,6 +90,9 @@
   :config (global-flycheck-mode 1))
 ;; Autocompletion
 (use-package company
+  :init
+    (setq company-idle-delay 0)
+    (setq company-minimum-prefix-length 1)
   :config (global-company-mode 1))
 ;; Vim emulation
 (use-package evil
