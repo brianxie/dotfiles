@@ -12,8 +12,6 @@ Mostly-portable repository containing personal configuration files.
   ~:defines~/~:functions~, ~:pin~, etc.)
 - Eliminate bytecomp warnings on initial bootstrap
 - Split ~init.el~ into separate modules controlled by feature flags
-- Work out when to ~setq~ variables and when to use
-  ~custom-set-variables~
 
 ** Vim
 - Make the configuration portable; the theme is referenced in .vimrc
