@@ -57,6 +57,9 @@
  )
 
 ;; Configure emacs built-in preferences.
+(require 'cl-lib)
+(cl-float-limits)
+(setq echo-keystrokes cl-least-positive-float)
 (setq inhibit-startup-screen t)
 (setq sentence-end-double-space nil)
 (global-display-line-numbers-mode 1)
@@ -117,6 +120,7 @@
   :config (ivy-mode 1))
 ;; Keybinding help
 (use-package which-key
+  :init (setq which-key-idle-delay cl-least-positive-float)
   :config (which-key-mode 1))
 
 ;; Editing tools
