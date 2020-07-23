@@ -7,8 +7,8 @@
 
 ;; Configure emacs built-in preferences.
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
+;; Added by Package.el. This must come before configurations of
+;; installed packages. Don't delete this line. If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
@@ -28,6 +28,12 @@
 ;; result in duplicated declarations (foregoing the single source of
 ;; truth) or modifications to this init file (resulting in extraneous
 ;; diffs).
+;; Of special note is package-selected-package, which is used by the
+;; package manager to identify dependencies. This is not strictly
+;; necessary for bootstrapping, as the :ensure keyword of use-package
+;; is sufficient to install all of the necessary packages, but
+;; tracking package-selected-packages allows package-autoremove to
+;; work properly.
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -41,6 +47,7 @@
  '(package-selected-packages
    (quote
     (anzu atom-one-dark-theme centaur-tabs company doom-modeline evil evil-anzu flycheck ivy org use-package which-key)))
+ '(sentence-end-double-space nil)
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
