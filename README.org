@@ -11,3 +11,4 @@ Mostly-portable repository containing personal configuration files.
 - Optimize usage of ~use-package~ keywords (e.g. ~:hook~, ~:defines~/~:functions~, ~:pin~, etc.)
 - Eliminate bytecomp warnings on initial bootstrap
 - Split ~init.el~ into separate modules controlled by feature flags
+- Work out when to ~setq~ variables and when to use ~custom-set-variables~

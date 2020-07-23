@@ -6,12 +6,6 @@
 ;;; Code:
 
 ;; Configure emacs built-in preferences.
-(setq inhibit-startup-screen t)
-(global-display-line-numbers-mode 1)
-(global-hl-line-mode 1)
-(column-number-mode 1)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -23,15 +17,31 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
+;; Use custom-set-variables to customize built-in features, as they
+;; make proper use of defcustom keywords (whereas setq does not). Note
+;; that everything in here gets clobbered by anything which touches
+;; custom-set-variables (e.g. customize or package-install), so
+;; metadata or structure should not be included within the
+;; custom-set-variables block.
+;; Do not use the functions customize-set-variable or
+;; customize-save-variable to configure these variables. Doing so may
+;; result in duplicated declarations (foregoing the single source of
+;; truth) or modifications to this init file (resulting in extraneous
+;; diffs).
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(global-display-line-numbers-mode t)
+ '(global-hl-line-mode t)
+ '(inhibit-startup-screen t)
+ '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (anzu atom-one-dark-theme centaur-tabs company doom-modeline
-    evil evil-anzu flycheck ivy org use-package which-key))))
+    (anzu atom-one-dark-theme centaur-tabs company doom-modeline evil evil-anzu flycheck ivy org use-package which-key)))
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
