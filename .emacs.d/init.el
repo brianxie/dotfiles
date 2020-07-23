@@ -5,7 +5,65 @@
 
 ;;; Code:
 
+;; Do not use the Custom UI, any of the customize-* functions, or
+;; anything else that saves state in custom-set-variables.
+
+;; While M-x customize and
+;; customize-set-variable/customize-save-variable have the advantage
+;; of properly respecting defcustom keywords (:set and :initialize)
+;; and being understood by the Custom UI, custom-set-variables
+;; is otherwise more limited than manually setting variables or
+;; calling functions. It does not permit structural organization or
+;; metadata, as custom-set-variables is clobbered each time a change
+;; is made (e.g. by M-x customize or M-x package-install); it does not
+;; permit any conditional customization; it does not provide any way
+;; to manage ordering dependencies; and it bifurcates the logic
+;; between settings which are exposed by Custom and those which are
+;; not. If executed as elisp, customize-set-variable and
+;; customize-save-variable may modify this init file when settings are
+;; persisted to custom-set-variables, and/or result in duplicated
+;; declarations of the same setting.
+
+;; Customizations should be made in elisp using only setq or function
+;; calls, in order to preserve a single source-of-truth for a given
+;; setting's configuration state. Additional defcustom requirements
+;; should be handled by manually executing the corresponding elisp.
+
+;; An exception is made for package-selected-packages, which is used
+;; by the package manager to identify dependencies. This is not
+;; strictly necessary for bootstrapping, as the :ensure keyword of
+;; use-package installs all of the necessary packages without writing
+;; to package-selected-packages, but storing package-selected-packages
+;; allows package-autoremove to work properly. The declaration of
+;; package-selected-packages does not interfere with individual
+;; use-package declarations, as they serve different purposes; the
+;; former reflects the packages that must be installed on the system,
+;; while the latter configures whether they are loaded and how they
+;; are configured.
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (anzu atom-one-dark-theme centaur-tabs company doom-modeline evil evil-anzu flycheck ivy org use-package which-key))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
 ;; Configure emacs built-in preferences.
+(setq inhibit-startup-screen t)
+(setq sentence-end-double-space nil)
+(global-display-line-numbers-mode 1)
+(global-hl-line-mode 1)
+(column-number-mode 1)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
 
 ;; Added by Package.el. This must come before configurations of
 ;; installed packages. Don't delete this line. If you don't want it,
@@ -16,45 +74,6 @@
 ;; Add MELPA to list of package archives.
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-
-;; Use custom-set-variables to customize built-in features, as they
-;; make proper use of defcustom keywords (whereas setq does not). Note
-;; that everything in here gets clobbered by anything which touches
-;; custom-set-variables (e.g. customize or package-install), so
-;; metadata or structure should not be included within the
-;; custom-set-variables block.
-;; Do not use the functions customize-set-variable or
-;; customize-save-variable to configure these variables. Doing so may
-;; result in duplicated declarations (foregoing the single source of
-;; truth) or modifications to this init file (resulting in extraneous
-;; diffs).
-;; Of special note is package-selected-package, which is used by the
-;; package manager to identify dependencies. This is not strictly
-;; necessary for bootstrapping, as the :ensure keyword of use-package
-;; is sufficient to install all of the necessary packages, but
-;; tracking package-selected-packages allows package-autoremove to
-;; work properly.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(global-display-line-numbers-mode t)
- '(global-hl-line-mode t)
- '(inhibit-startup-screen t)
- '(menu-bar-mode nil)
- '(package-selected-packages
-   (quote
-    (anzu atom-one-dark-theme centaur-tabs company doom-modeline evil evil-anzu flycheck ivy org use-package which-key)))
- '(sentence-end-double-space nil)
- '(tool-bar-mode nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 ;; Update package archive if currently empty.
 ;; Ensures that the local package repository is up-to-date the first
