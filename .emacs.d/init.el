@@ -48,7 +48,9 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (anzu atom-one-dark-theme centaur-tabs company doom-modeline evil evil-anzu evil-goggles flycheck ivy org use-package which-key))))
+    (anzu atom-one-dark-theme centaur-tabs company doom-modeline
+    evil evil-anzu evil-goggles flycheck ivy org use-package
+    which-key))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -144,6 +146,7 @@
     (setq evil-want-C-u-scroll t)
   :config (evil-mode 1))
 (use-package evil-goggles
+  :disabled
   :if (featurep 'evil)
   :after (evil)
   :config
