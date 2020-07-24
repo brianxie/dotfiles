@@ -138,6 +138,7 @@
   :config (global-company-mode 1))
 ;; Vim emulation
 (use-package evil
+  :disabled
   :init
     (setq evil-toggle-key "C-c v")
     (setq evil-default-state 'emacs)
@@ -148,6 +149,7 @@
   :after (evil)
   :config
     (evil-goggles-mode)
+    (evil-goggles-use-diff-faces)
     (setq evil-goggles-duration 0.0625))
 
 ;; Auxiliary packages
