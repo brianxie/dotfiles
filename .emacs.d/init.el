@@ -64,6 +64,7 @@
 (setq echo-keystrokes cl-least-positive-float)
 (setq make-backup-files nil)
 (setq inhibit-startup-screen t)
+(setq garbage-collection-messages t)
 (setq sentence-end-double-space nil)
 (global-display-line-numbers-mode 1)
 (global-hl-line-mode 1)
@@ -131,7 +132,9 @@
 
 ;; Syntax checking
 (use-package flycheck
-  :config (global-flycheck-mode 1))
+  :config
+    (global-flycheck-mode 1)
+    (setq flycheck-check-syntax-automatically '(mode-enabled save)))
 ;; Autocompletion
 (use-package company
   :disabled
