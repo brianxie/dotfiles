@@ -1,7 +1,7 @@
 ;;; init.el --- Emacs editor configuration -*- lexical-binding: t; -*-
 
 ;;; Commentary:
-;; Emacs editor configuration.
+;; Emacs editor configuration. Written for 26.3.
 
 ;;; Code:
 

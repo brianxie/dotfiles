@@ -4,12 +4,12 @@
 
 Mostly-portable repository containing personal configuration files.
 
-* Planned improvements
+* Tracker
 
 ** Emacs
-- (Continuously) configure and install packages
-- Optimize usage of ~use-package~ keywords (e.g. ~:hook~,
-  ~:defines~/~:functions~, ~:pin~, etc.)
+- Fix ~init.el~ for 27.1 changes
+- Optimize usage of ~use-package~ keywords (e.g. ~:hook~, ~:defines~
+  and ~:functions~, ~:pin~, etc.)
 - Eliminate bytecomp warnings on initial bootstrap
 - Split ~init.el~ into separate modules controlled by feature flags
 
