@@ -1,3 +1,5 @@
+export EDITOR=vim
+
 # Emacs-style keybindings
 bindkey -e
 
