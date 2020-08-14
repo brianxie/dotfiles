@@ -6,6 +6,9 @@ Mostly-portable repository containing personal configuration files.
 
 * Tracker
 
+** Zsh
+- Complete an initial stable .zshrc
+
 ** Emacs
 - Fix ~init.el~ for 27.1 changes, e.g. the addition of ~early-init.el~
 - Optimize usage of ~use-package~ keywords (e.g. ~:hook~, ~:defines~
