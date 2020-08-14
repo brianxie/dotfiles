@@ -6,8 +6,8 @@ Mostly-portable repository containing personal configuration files.
 
 * Tracker
 
-** Zsh
-- Complete an initial stable .zshrc
+** General
+- Nothing right now!
 
 ** Emacs
 - Fix ~init.el~ for 27.1 changes, e.g. the addition of ~early-init.el~
@@ -16,7 +16,13 @@ Mostly-portable repository containing personal configuration files.
 - Eliminate bytecomp warnings on initial bootstrap
 - Split ~init.el~ into separate modules controlled by feature flags
 
+** Tmux
+- Nothing right now!
+
 ** Vim
 - Make the configuration portable; the theme is referenced in .vimrc
   but not included in this repository
 - Use a package manager
+
+** Zsh
+- Configure completion and packages
