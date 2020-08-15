@@ -7,7 +7,7 @@ Mostly-portable repository containing personal configuration files.
 This repository uses submodules. After cloning, execute:
 
 #+begin_src
-git submodule update --init --recursiv
+git submodule update --init --recursive
 #+end_src
 
 * Tracker
