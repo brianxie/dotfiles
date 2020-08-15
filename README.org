@@ -14,6 +14,7 @@ git clone --recurse-submodules
 
 ** General
 - Alias dotfiles to reduce home directory bloat
+- Add instructions for updating submodules
 
 ** Emacs
 - Fix ~init.el~ for 27.1 changes, e.g. the addition of ~early-init.el~
@@ -23,10 +24,10 @@ git clone --recurse-submodules
 - Split ~init.el~ into separate modules controlled by feature flags
 
 ** Tmux
-- Nothing right now!
+- Tune escape-time
 
 ** Vim
-- Add packages
+- (Maybe) get a working bufferline
 
 ** Zsh
 - Configure completion and packages
