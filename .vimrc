@@ -24,5 +24,6 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 
-" Dependencies
+" Packages
+packadd! onedark.vim
 colorscheme onedark
