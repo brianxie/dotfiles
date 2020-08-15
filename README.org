@@ -4,10 +4,10 @@
 
 Mostly-portable repository containing personal configuration files.
 
-This repository uses submodules. After cloning, execute:
+This repository uses submodules. To clone, execute:
 
 #+begin_src
-git submodule update --init --recursive
+git clone --recurse-submodules
 #+end_src
 
 * Tracker
@@ -26,7 +26,7 @@ git submodule update --init --recursive
 - Nothing right now!
 
 ** Vim
-- Nothing right now!
+- Add packages
 
 ** Zsh
 - Configure completion and packages
