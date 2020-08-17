@@ -2,7 +2,7 @@
 #+AUTHOR: Brian Xie
 #+EMAIL: briancxie@gmail.com
 
-Mostly-portable repository containing personal configuration files.
+Portable repository of personal configuration files.
 
 This repository uses submodules. To clone, execute:
 
@@ -19,7 +19,7 @@ git submodule update --remote --merge
 * Tracker
 
 ** General
-- Alias dotfiles to reduce home directory bloat
+- Symlink dotfiles to reduce home directory bloat
 
 ** Emacs
 - Fix ~init.el~ for 27.1 changes, e.g. the addition of ~early-init.el~
@@ -33,6 +33,7 @@ git submodule update --remote --merge
 
 ** Vim
 - (Maybe) get a working bufferline
+- (Maybe) install a syntax checking package
 
 ** Zsh
-- Configure completion and packages
+- Nothing in particular, but ~zsh~ configuration is a lifetime of work
