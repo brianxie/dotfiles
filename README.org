@@ -10,11 +10,16 @@ This repository uses submodules. To clone, execute:
 git clone --recurse-submodules
 #+end_src
 
+To update submodules in an existing repository, execute:
+
+#+begin_src
+git submodule update --remote --merge
+#+end_src
+
 * Tracker
 
 ** General
 - Alias dotfiles to reduce home directory bloat
-- Add instructions for updating submodules
 
 ** Emacs
 - Fix ~init.el~ for 27.1 changes, e.g. the addition of ~early-init.el~
