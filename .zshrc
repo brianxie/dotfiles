@@ -19,7 +19,8 @@ unsetopt menu_complete
 zstyle ':completion:*' completer _expand _complete _ignored _match
 zstyle ':completion:*' matcher-list '' '+m:{[:lower:][:upper:]}={[:upper:][:lower:]}'
 # Always use menu selection (directional browsing) in completions
-zstyle ':completion:*' menu select=long-list select=0
+# Note that menu selection is different from menu completion
+zstyle ':completion:*' menu select=0
 # Display 'n/N' row in menu selection for long lists
 zstyle ':completion:*' select-prompt '%l'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
