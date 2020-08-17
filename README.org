@@ -1,4 +1,4 @@
-#+TITLE: Personal dotfiles
+#+TITLE: Dotfiles
 #+AUTHOR: Brian Xie
 #+EMAIL: briancxie@gmail.com
 
@@ -29,11 +29,13 @@ git submodule update --remote --merge
 - Split ~init.el~ into separate modules controlled by feature flags
 
 ** Tmux
-- Tune escape-time
+- Tune ~escape-time~
 
 ** Vim
 - (Maybe) get a working bufferline
 - (Maybe) install a syntax checking package
 
 ** Zsh
-- Nothing in particular, but ~zsh~ configuration is a lifetime of work
+- Configure ~LS_COLORS~
+- Incremental improvements ad infinitum; ~zsh~ configuration is a
+  lifetime of work
