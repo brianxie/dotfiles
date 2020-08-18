@@ -6,14 +6,14 @@ setopt notify
 # Display right-side prompt only on current command line
 setopt transient_rprompt
 
-# Enable menu completion (tab through ambiguous completions)
-setopt auto_menu
-# Display ambiguous completions in list (before menu completion)
-setopt auto_list
-# Display ambiguous completions in list immediately after unambiguous prefix completion
-unsetopt list_ambiguous
 # Don't immediately insert an ambiguous completion
 unsetopt menu_complete
+# Display ambiguous completions in list (before menu completion)
+setopt auto_list
+# Display list immediately after unambiguous prefix completion (without requiring an additional <TAB>)
+unsetopt list_ambiguous
+# Enable menu completion (tab through ambiguous completions)
+setopt auto_menu
 
 ## Completion system configuration
 zstyle ':completion:*' completer _expand _complete _ignored _match
@@ -40,3 +40,13 @@ RPROMPT="%F{blue}${JOBS}%f"
 ## Packages
 # Syntax highlighting (package installed separately)
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+## Appendix: a note on completion behavior
+
+# The following completion behavior is configured:
+#   <TAB-1> inserts the longest unambiguous prefix (if applicable) and lists valid completions
+#   <TAB-2> enters menu completion with menu selection
+
+# If only a single completion is valid, <TAB-1> inserts that completion without listing.
+# Note that glob expansion does not adhere to this behavior and always enters menu completion immediately.
+
