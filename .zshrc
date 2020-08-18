@@ -16,9 +16,11 @@ unsetopt list_ambiguous
 setopt auto_menu
 
 ## Completion system configuration
+# List of configured completer functions, order-sensitive
+# Other completers can also be added (e.g. _correct, _approximate, or a custom function)
 zstyle ':completion:*' completer _expand _complete _ignored _match
 zstyle ':completion:*' matcher-list '' '+m:{[:lower:][:upper:]}={[:upper:][:lower:]}'
-# Always use menu selection (directional browsing) in completions
+# Always use menu selection (cursor browsing) in completions
 # Note that menu selection is different from menu completion
 zstyle ':completion:*' menu select=0
 # Display 'n/N' row in menu selection for long lists
