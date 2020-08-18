@@ -49,4 +49,3 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # If only a single completion is valid, <TAB-1> inserts that completion without listing.
 # Note that glob expansion does not adhere to this behavior and always enters menu completion immediately.
-
