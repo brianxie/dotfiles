@@ -47,10 +47,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (anzu atom-one-dark-theme centaur-tabs company doom-modeline
-    evil evil-anzu evil-goggles flycheck ivy org use-package
-    which-key))))
+   '(anzu atom-one-dark-theme centaur-tabs company doom-modeline evil evil-anzu evil-goggles flycheck ivy org use-package which-key)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -73,12 +70,6 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
-
 ;; Add MELPA to list of package archives.
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -86,7 +77,8 @@
 ;; Update package archive if currently empty.
 ;; Ensures that the local package repository is up-to-date the first
 ;; time this init.el is run.
-(when (not package-archive-contents)
+(package-read-all-archive-contents)
+(unless package-archive-contents
   (package-refresh-contents))
 
 ;; Check that all packages are present, and install any that are not.

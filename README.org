@@ -22,7 +22,7 @@ git submodule update --remote --merge
 - Symlink dotfiles to reduce home directory bloat
 
 ** Emacs
-- Fix ~init.el~ for 27.1 changes, e.g. the addition of ~early-init.el~
+- Optimize startup with ~early-init.el~
 - Optimize usage of ~use-package~ keywords (e.g. ~:hook~, ~:defines~
   and ~:functions~, ~:pin~, etc.)
 - Eliminate bytecomp warnings on initial bootstrap
