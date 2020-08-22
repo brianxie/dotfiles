@@ -35,12 +35,13 @@ export EDITOR=vim
 ## Theme
 PWD='%~'
 PROMPT_SYMBOL='❯'
-JOBS='[%j]'
+JOBS='%j'
 PROMPT="%B%F{blue}${PWD}%f%b %B${PROMPT_SYMBOL}%b "
-RPROMPT="%F{blue}${JOBS}%f"
+RPROMPT="[%F{blue}${JOBS}%f]"
 
 ## Packages
 # Syntax highlighting (package installed separately)
+# Location may differ between systems
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ## Appendix: a note on completion behavior
