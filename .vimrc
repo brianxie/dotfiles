@@ -7,13 +7,15 @@ set ignorecase
 
 " Display
 set background=dark
+set cursorline
 set hlsearch
 set incsearch
 set laststatus=2
 set noshowmode
 set number
 set ruler
-set showmatch
+set shortmess-=S
+set title
 set visualbell
 syntax enable
 
