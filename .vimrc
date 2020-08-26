@@ -15,7 +15,6 @@ set noshowmode
 set number
 set ruler
 set shortmess-=S
-set title
 set visualbell
 syntax enable
 
