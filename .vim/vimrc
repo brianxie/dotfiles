@@ -12,7 +12,7 @@ set hlsearch
 set incsearch
 set laststatus=2
 set noshowmode
-set number
+set relativenumber
 set ruler
 set shortmess-=S
 set visualbell
@@ -28,6 +28,7 @@ set tabstop=2
 
 " Packages
 packadd! onedark.vim
+let g:onedark_termcolors=16
 colorscheme onedark
 
 packadd! lightline.vim
