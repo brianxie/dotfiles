@@ -29,9 +29,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 autoload -Uz compinit
 compinit
 
-## Environment variables and aliases
-export EDITOR=vim
-
 ## Theme
 PWD='%~'
 PROMPT_SYMBOL='❯'
