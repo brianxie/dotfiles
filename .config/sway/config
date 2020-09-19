@@ -18,7 +18,9 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+## BEGIN_CHANGES
+set $menu bemenu-run | xargs swaymsg exec --
+## END_CHANGES
 
 ### Output configuration
 #
@@ -57,7 +59,16 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
+## BEGIN_CHANGES
+input * {
+  repeat_delay 200
+  repeat_rate 30
+}
 
+input * {
+  accel_profile flat
+}
+## END_CHANGES
 ### Key bindings
 #
 # Basics:
@@ -140,8 +151,10 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    ## BEGIN_CHANGES
+    bindsym $mod+backslash splith
+    bindsym $mod+minus splitv
+    ## END_CHANGES
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
@@ -166,11 +179,15 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     # You can send windows there and get them back later.
 
     # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
+    ## BEGIN_CHANGES
+    bindsym $mod+Shift+grave move scratchpad
+    ## END_CHANGES
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
+    ## BEGIN_CHANGES
+    bindsym $mod+grave scratchpad show
+    ## END_CHANGES
 #
 # Resizing containers:
 #
