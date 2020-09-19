@@ -39,4 +39,5 @@ git submodule update --remote --merge
 - Configure ~LS_COLORS~
 
 ** Others
-- Experimental configuration for terminal emulator (Alacritty)
+- Experimental configuration for terminal emulator (Alacritty) and
+  compositor/window manager (Sway)
