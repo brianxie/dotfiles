@@ -37,3 +37,6 @@ git submodule update --remote --merge
 
 ** Zsh
 - Configure ~LS_COLORS~
+
+** Others
+- Experimental configuration for terminal emulator (Alacritty)
