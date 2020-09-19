@@ -36,6 +36,11 @@ JOBS='%j'
 PROMPT="%B%F{blue}${PWD}%f%b %B${PROMPT_SYMBOL}%b "
 RPROMPT="[%F{blue}${JOBS}%f]"
 
+## Aliases
+alias diff='diff --color=auto'
+alias grep='grep --color=auto'
+alias ls='ls --color=auto'
+
 ## Packages
 # Syntax highlighting (package installed separately)
 # Location may differ between systems
