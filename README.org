@@ -31,11 +31,9 @@ git submodule update --remote --merge
 ** Tmux
 - Tune ~escape-time~
 
-** Vim
+** Vim/Neovim
 - (Maybe) get a working bufferline
 - (Maybe) install a syntax checking package
 
 ** Zsh
 - Configure ~LS_COLORS~
-- Incremental improvements ad infinitum; ~zsh~ configuration is a
-  lifetime of work
