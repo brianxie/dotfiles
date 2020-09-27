@@ -16,10 +16,7 @@ To update submodules in an existing repository, execute:
 git submodule update --remote --merge
 #+end_src
 
-* Tracker
-
-** General
-- Symlink dotfiles to reduce home directory bloat
+* Upcoming
 
 ** Emacs
 - Optimize startup with ~early-init.el~
@@ -36,7 +33,6 @@ git submodule update --remote --merge
 - (Maybe) install a syntax checking package
 
 ** Zsh
-- Configure ~LS_COLORS~
 
 ** Others
 - Experimental configuration for terminal emulator (Alacritty) and
