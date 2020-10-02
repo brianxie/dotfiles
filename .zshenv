@@ -12,5 +12,5 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR='nvim'
 
 # Placeholders for the default terminal emulator and application launcher.
-export SWAYTERM='swaymsg -m Set the $SWAYTERM environment variable in .zshenv.'
-export SWAYMENU='swaymsg -m Set the $SWAYMENU environment variable in .zshenv.'
+export SWAYTERM='swaynag -m Set the $SWAYTERM environment variable in .zshenv.'
+export SWAYMENU='swaynag -m Set the $SWAYMENU environment variable in .zshenv.'
