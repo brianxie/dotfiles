@@ -14,12 +14,14 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+## BEGIN_CHANGES
+set $term $SWAYTERM
+## END_CHANGES
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 ## BEGIN_CHANGES
-set $menu bemenu-run | xargs swaymsg exec --
+set $menu $SWAYMENU | xargs swaymsg exec --
 ## END_CHANGES
 
 ### Output configuration

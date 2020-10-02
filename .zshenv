@@ -8,4 +8,9 @@ export ZDOTDIR="$HOME/.config/zsh"
 # Use '~/.config' as the base directory for configuration files, for programs
 # which respect the XDG Base Directory Specification.
 export XDG_CONFIG_HOME="$HOME/.config"
+
 export EDITOR='nvim'
+
+# Placeholders for the default terminal emulator and application launcher.
+export SWAYTERM='Set the $SWAYTERM environment variable in .zshenv.'
+export SWAYMENU='Set the $SWAYMENU environment variable in .zshenv.'
