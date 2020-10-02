@@ -35,5 +35,4 @@ git submodule update --remote --merge
 ** Zsh
 
 ** Others
-- Experimental configuration for terminal emulator (Alacritty) and
-  compositor/window manager (Sway)
+- Experimental configuration for compositor/window manager (Sway)
