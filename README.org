@@ -33,6 +33,3 @@ git submodule update --remote --merge
 - (Maybe) install a syntax checking package
 
 ** Zsh
-
-** Others
-- Experimental configuration for compositor/window manager (Sway)
