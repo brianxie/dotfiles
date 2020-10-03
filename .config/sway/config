@@ -4,6 +4,10 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+## BEGIN_CHANGES
+set $darkblack #131613
+## END_CHANGES
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -27,7 +31,9 @@ set $menu $SWAYMENU | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+## BEGIN_CHANGES
+output * bg $darkblack solid_color
+## END_CHANGES
 #
 # Example configuration:
 #
@@ -239,5 +245,18 @@ bar {
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
+
+## BEGIN_CHANGES
+default_border normal 0
+gaps inner 8
+
+set $black #282C34
+set $white #ABB2BF
+set $blue #61AFEF
+
+client.focused $white $white $black $blue $black
+client.focused_inactive $black $black $black $black $black
+client.unfocused $black $black $black $black $black
+## END_CHANGES
 
 include /etc/sway/config.d/*
