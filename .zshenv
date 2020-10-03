@@ -10,3 +10,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 export EDITOR='nvim'
+
+# Placeholders for the default terminal emulator and application launcher.
+export SWAYTERM='swaynag -m SWAYTERM_UNSET'
+export SWAYMENU='swaynag -m SWAYMENU_UNSET'
