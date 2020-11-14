@@ -5,7 +5,7 @@
 # Read `man 5 sway` for a complete reference.
 
 ## BEGIN_CHANGES
-set $darkblack #131613
+set $darkblack #000000
 ## END_CHANGES
 
 ### Variables
@@ -248,15 +248,15 @@ bar {
 
 ## BEGIN_CHANGES
 default_border normal 0
-gaps inner 8
+gaps inner 1
 
 set $black #282C34
 set $white #ABB2BF
 set $blue #61AFEF
 
-client.focused $white $white $black $blue $black
-client.focused_inactive $black $black $black $black $black
-client.unfocused $black $black $black $black $black
+client.focused $white $white $black $black $black
+client.focused_inactive $black $black $white $black $black
+client.unfocused $black $black $white $black $black
 ## END_CHANGES
 
 include /etc/sway/config.d/*
