@@ -16,6 +16,7 @@ set number
 set relativenumber
 set ruler
 set shortmess-=S
+set termguicolors
 set visualbell
 syntax enable
 
@@ -29,7 +30,6 @@ set tabstop=2
 
 " Packages
 packadd! onedark.vim
-let g:onedark_termcolors=16
 colorscheme onedark
 
 packadd! lightline.vim
