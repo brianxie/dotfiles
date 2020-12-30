@@ -7,7 +7,7 @@ Portable repository of personal configuration files.
 This repository uses submodules. To clone, execute:
 
 #+begin_src
-git clone --recurse-submodules
+git clone --recurse-submodules <repository_url>
 #+end_src
 
 To update submodules in an existing repository, execute:
@@ -16,20 +16,20 @@ To update submodules in an existing repository, execute:
 git submodule update --remote --merge
 #+end_src
 
-* Upcoming
+** Upcoming
 
-** Emacs
+*** Emacs
 - Optimize startup with ~early-init.el~
 - Optimize usage of ~use-package~ keywords (e.g. ~:hook~, ~:defines~
   and ~:functions~, ~:pin~, etc.)
 - Eliminate bytecomp warnings on initial bootstrap
 - Split ~init.el~ into separate modules controlled by feature flags
 
-** Tmux
+*** Tmux
 - Tune ~escape-time~
 
-** Vim/Neovim
+*** Vim/Neovim
 - (Maybe) get a working bufferline
 - (Maybe) install a syntax checking package
 
-** Zsh
+*** Zsh
