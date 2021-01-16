@@ -1,7 +1,11 @@
 ;;; init.el --- Emacs editor configuration -*- lexical-binding: t; -*-
 
 ;;; Commentary:
+
 ;; Emacs editor configuration. Written for 27.1.
+
+;; See also early-init.el, which is loaded earlier in the startup sequence and
+;; performs a limited set of configurations.
 
 ;;; Code:
 
@@ -22,10 +26,10 @@
 ;; to custom-set-variables, and/or result in duplicated declarations of the same
 ;; setting.
 
-;; Customizations should be made in elisp using only setq or function calls, in
-;; order to preserve a single source-of-truth for a given setting's
-;; configuration state. Additional defcustom requirements should be handled by
-;; manually executing the corresponding elisp.
+;; Customizations should be made in elisp using only setq/setq-default or
+;; function calls, in order to preserve a single source-of-truth for a given
+;; setting's configuration state. Additional defcustom requirements should be
+;; handled by manually executing the corresponding elisp.
 
 ;; An exception is made for package-selected-packages, which is used by the
 ;; package manager to identify dependencies. This is not strictly necessary for
@@ -63,9 +67,6 @@
 (column-number-mode 1)
 (global-display-line-numbers-mode 1)
 (global-hl-line-mode 1)
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
 
 ;; Add MELPA to list of package archives.
 (require 'package)

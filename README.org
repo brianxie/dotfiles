@@ -19,7 +19,6 @@ git submodule update --remote --merge
 ** Upcoming
 
 *** Emacs
-- Optimize startup with ~early-init.el~
 - Optimize usage of ~use-package~ keywords (e.g. ~:hook~, ~:defines~
   and ~:functions~, ~:pin~, etc.)
 - Eliminate bytecomp warnings on initial bootstrap
