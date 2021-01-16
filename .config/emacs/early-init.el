@@ -13,6 +13,9 @@
 ;; properties are not yet available at this point in the startup sequence and so
 ;; must go in init.el instead.
 
+;; The Emacs documentation is otherwise rather sparse concerning guidance of
+;; what should be placed in early-init.el instead of init.el.
+
 ;;; Code:
 
 ;; Disable some GUI elements.
