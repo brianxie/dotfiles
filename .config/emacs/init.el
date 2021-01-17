@@ -139,7 +139,6 @@
     (setq evil-want-C-u-scroll t)
   :config (evil-mode 1))
 (use-package evil-goggles
-  :disabled
   :if (featurep 'evil)
   :after (evil)
   :config
@@ -152,7 +151,6 @@
 (use-package org)
 ;; Org-roam
 (use-package org-roam
-  :disabled
   :hook (after-init . org-roam-mode)
   :init
     ; Parent directory for all org-roam source files.
