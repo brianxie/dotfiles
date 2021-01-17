@@ -152,9 +152,18 @@
 (use-package org)
 ;; Org-roam
 (use-package org-roam
-  :hook
-    (after-init . org-roam-mode)
+  :hook (after-init . org-roam-mode)
   :init
-    (setq org-roam-directory (file-truename "~/.org-roam/")))
+    ; Parent directory for all org-roam source files.
+    (setq org-roam-directory (file-truename "~/.org-roam/"))
+    (setq org-roam-db-update-method 'immediate)
+  :config
+    ; Overwrite the default org-roam template.
+    (setq org-roam-capture-templates
+      '(("d" "default" plain (function org-roam--capture-get-point) "%?"
+        :file-name "${slug}"
+        :head "#+TITLE: ${title}\n"
+        :immediate-finish t
+        :unnarrowed t))))
 
 ;;; init.el ends here
