@@ -152,6 +152,7 @@
 (use-package org)
 ;; Org-roam
 (use-package org-roam
+  :disabled
   :hook (after-init . org-roam-mode)
   :init
     ; Parent directory for all org-roam source files.
