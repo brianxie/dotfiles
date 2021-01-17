@@ -105,7 +105,8 @@
 (use-package anzu
   :config (global-anzu-mode 1))
 (use-package evil-anzu
-  :if (featurep 'evil))
+  :if (featurep 'evil)
+  :after (evil))
 
 ;; Non-editing tools
 
@@ -138,6 +139,7 @@
     (setq evil-want-C-u-scroll t)
   :config (evil-mode 1))
 (use-package evil-goggles
+  :disabled
   :if (featurep 'evil)
   :after (evil)
   :init (setq evil-goggles-duration 0.0625)
