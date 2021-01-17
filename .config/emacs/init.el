@@ -137,7 +137,12 @@
     (setq evil-toggle-key "C-c v")
     (setq evil-default-state 'emacs)
     (setq evil-want-C-u-scroll t)
-  :config (evil-mode 1))
+  :config
+    (add-hook 'evil-emacs-state-entry-hook
+      (lambda () (setq display-line-numbers t)))
+    (add-hook 'evil-emacs-state-exit-hook
+      (lambda () (setq display-line-numbers 'relative)))
+    (evil-mode 1))
 (use-package evil-goggles
   :disabled
   :if (featurep 'evil)
