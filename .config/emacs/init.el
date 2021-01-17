@@ -121,9 +121,8 @@
 
 ;; Syntax checking
 (use-package flycheck
-  :config
-    (global-flycheck-mode 1)
-    (setq flycheck-check-syntax-automatically '(mode-enabled save)))
+  :init (setq flycheck-check-syntax-automatically '(mode-enabled save)))
+  :config (global-flycheck-mode 1)
 ;; Autocompletion
 (use-package company
   :disabled
@@ -141,14 +140,14 @@
 (use-package evil-goggles
   :if (featurep 'evil)
   :after (evil)
-  :config
-    (evil-goggles-mode)
-    (setq evil-goggles-duration 0.0625))
+  :init (setq evil-goggles-duration 0.0625)
+  :config (evil-goggles-mode))
 
 ;; Auxiliary packages
 
 ;; Org mode
-(use-package org)
+(use-package org
+  :init (setq org-adapt-indentation nil))
 ;; Org-roam
 (use-package org-roam
   :hook (after-init . org-roam-mode)
@@ -156,7 +155,6 @@
     ; Parent directory for all org-roam source files.
     (setq org-roam-directory (file-truename "~/.org-roam/"))
     (setq org-roam-db-update-method 'immediate)
-  :config
     ; Overwrite the default org-roam template.
     (setq org-roam-capture-templates
       '(("d" "default" plain (function org-roam--capture-get-point) "%?"
