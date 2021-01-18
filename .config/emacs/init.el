@@ -130,7 +130,6 @@
       (lambda () (setq display-line-numbers 'relative)))
     (evil-mode 1))
 (use-package evil-goggles
-  :disabled
   :if (featurep 'evil)
   :after (evil)
   :init (setq evil-goggles-duration 0.0625)
