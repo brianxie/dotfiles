@@ -24,7 +24,7 @@
 ;; package-selected-packages).
 (setq custom-file
   (file-truename (concat (getenv "XDG_CONFIG_HOME") "/emacs/custom.el")))
-(load custom-file)
+;; Call (load custom-file) to use these customizations.
 
 ;; Configure emacs built-in preferences.
 (require 'cl-lib)
