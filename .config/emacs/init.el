@@ -100,11 +100,10 @@
   :config (global-flycheck-mode 1)
 ;; Autocompletion
 (use-package company
-  :disabled
+  :commands company-mode
   :init
     (setq company-idle-delay 0)
-    (setq company-minimum-prefix-length 1)
-  :config (global-company-mode 1))
+    (setq company-minimum-prefix-length 1))
 ;; Vim emulation
 (use-package evil
   :init
