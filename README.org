@@ -16,19 +16,14 @@ To update submodules in an existing repository, execute:
 git submodule update --remote --merge
 #+end_src
 
-** Upcoming
+** Roadmap
 
 *** Emacs
-- Optimize usage of ~use-package~ keywords (e.g. ~:hook~, ~:defines~
-  and ~:functions~, ~:pin~, etc.)
-- Eliminate bytecomp warnings on initial bootstrap
-- Split ~init.el~ into separate modules controlled by feature flags
 
 *** Tmux
 - Tune ~escape-time~
 
 *** Vim/Neovim
-- (Maybe) get a working bufferline
-- (Maybe) install a syntax checking package
+- Add a bufferline
 
 *** Zsh
