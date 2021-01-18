@@ -143,7 +143,8 @@
   :init (setq org-adapt-indentation nil))
 ;; Org-roam
 (use-package org-roam
-  :hook (after-init . org-roam-mode)
+  ; `M-x org-roam-mode RET` to enable.
+  :commands org-roam-mode
   :init
     (setq org-roam-db-update-method 'immediate)
     ; Overwrite the default org-roam template.
