@@ -132,8 +132,6 @@
 (use-package org-roam
   :hook (after-init . org-roam-mode)
   :init
-    ; Parent directory for all org-roam source files.
-    (setq org-roam-directory (file-truename "~/.org-roam/"))
     (setq org-roam-db-update-method 'immediate)
     ; Overwrite the default org-roam template.
     (setq org-roam-capture-templates
