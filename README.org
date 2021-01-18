@@ -19,6 +19,7 @@ git submodule update --remote --merge
 ** Roadmap
 
 *** Emacs
+- Configure lsp-mode
 
 *** Tmux
 - Tune ~escape-time~

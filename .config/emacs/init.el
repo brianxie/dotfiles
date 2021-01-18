@@ -101,9 +101,22 @@
 ;; Autocompletion
 (use-package company
   :commands company-mode
+  ; Automatically toggle company-mode when lsp-mode is toggled.
+  ; company-mode can still be enabled/disabled independently.
+  :hook (lsp-mode . (lambda () (company-mode (if lsp-mode 1 0))))
   :init
     (setq company-idle-delay 0)
     (setq company-minimum-prefix-length 1))
+;; LSP
+(use-package lsp-mode
+  :commands lsp
+  :init
+    ; Integrate with company for autocompletion.
+    ; A company-mode hook will automatically toggle company-mode when lsp-mode
+    ; is toggled.
+    (setq lsp-completion-provider :capf)
+    (setq lsp-keep-workspace-alive nil)
+    (setq lsp-enable-snippet nil))
 ;; Vim emulation
 (use-package evil
   :init
