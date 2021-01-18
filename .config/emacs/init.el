@@ -79,7 +79,6 @@
 (use-package anzu
   :config (global-anzu-mode 1))
 (use-package evil-anzu
-  :if (featurep 'evil)
   :after (evil))
 
 ;; Non-editing tools
@@ -130,7 +129,6 @@
       (lambda () (setq display-line-numbers 'relative)))
     (evil-mode 1))
 (use-package evil-goggles
-  :if (featurep 'evil)
   :after (evil)
   :init (setq evil-goggles-duration 0.0625)
   :config (evil-goggles-mode))
