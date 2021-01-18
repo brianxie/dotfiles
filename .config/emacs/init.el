@@ -99,6 +99,7 @@
   :config (global-flycheck-mode 1)
 ;; Autocompletion
 (use-package company
+  ; `M-x company-mode RET` to toggle locally.
   :commands company-mode
   ; Automatically toggle company-mode when lsp-mode is toggled.
   ; company-mode can still be enabled/disabled independently.
@@ -108,6 +109,8 @@
     (setq company-minimum-prefix-length 1))
 ;; LSP
 (use-package lsp-mode
+  ; `M-x lsp RET` to enable locally.
+  ; `M-x lsp-disconnect RET` to disable locally.
   :commands lsp
   :init
     ; Integrate with company for autocompletion.
