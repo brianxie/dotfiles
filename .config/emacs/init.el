@@ -24,7 +24,8 @@
 ;; package-selected-packages).
 (setq custom-file
   (file-truename (concat (getenv "XDG_CONFIG_HOME") "/emacs/custom.el")))
-;; Call (load custom-file) to use these customizations.
+(when (file-exists-p custom-file)
+  (load custom-file))
 
 ;; Configure emacs built-in preferences.
 (require 'cl-lib)
@@ -103,7 +104,8 @@
   :commands company-mode
   ; Automatically toggle company-mode when lsp-mode is toggled.
   :hook
-    (lsp-mode . (lambda () (company-mode (if (bound-and-true-p lsp-mode) 1 0))))
+    (lsp-mode .
+      (lambda () (company-mode (if (bound-and-true-p lsp-mode) 1 0))))
   :init
     (setq company-idle-delay 0)
     (setq company-minimum-prefix-length 1))
