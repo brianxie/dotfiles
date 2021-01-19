@@ -102,7 +102,6 @@
   ; `M-x company-mode RET` to toggle locally.
   :commands company-mode
   ; Automatically toggle company-mode when lsp-mode is toggled.
-  ; company-mode can still be enabled/disabled independently.
   :hook
     (lsp-mode . (lambda () (company-mode (if (bound-and-true-p lsp-mode) 1 0))))
   :init
@@ -115,11 +114,9 @@
   :commands lsp
   :init
     ; Integrate with company for autocompletion.
-    ; A company-mode hook will automatically toggle company-mode when lsp-mode
-    ; is toggled.
+    ; Also toggles company-mode via hook.
     (setq lsp-completion-provider :capf)
     ; Integrate with flycheck for diagnostics.
-    ; No hooks, since flycheck is already enabled globally.
     (setq lsp-diagnostics-provider :flycheck)
     (setq lsp-enable-snippet nil)
     (setq lsp-keep-workspace-alive nil)
