@@ -103,7 +103,8 @@
   :commands company-mode
   ; Automatically toggle company-mode when lsp-mode is toggled.
   ; company-mode can still be enabled/disabled independently.
-  :hook (lsp-mode . (lambda () (company-mode (if lsp-mode 1 0))))
+  :hook
+    (lsp-mode . (lambda () (company-mode (if (bound-and-true-p lsp-mode) 1 0))))
   :init
     (setq company-idle-delay 0)
     (setq company-minimum-prefix-length 1))
