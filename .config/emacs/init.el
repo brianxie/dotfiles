@@ -122,8 +122,6 @@
     ; Integrate with flycheck for diagnostics.
     (setq lsp-diagnostics-provider :flycheck)
     (setq lsp-enable-snippet nil)
-    (setq lsp-keep-workspace-alive nil)
-    (setq lsp-before-save-edits nil)
     (setq lsp-auto-execute-action nil))
 ;; Vim emulation
 (use-package evil
