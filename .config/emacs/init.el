@@ -109,8 +109,9 @@
     (setq company-minimum-prefix-length 1))
 ;; LSP
 (use-package lsp-mode
-  ; `M-x lsp RET` to enable locally.
-  ; `M-x lsp-disconnect RET` to disable locally.
+  ; `M-x lsp RET` to enable.
+  ; `M-x lsp-disconnect RET` to disconnect a single buffer.
+  ; `M-x lsp-workspace-shutdown RET` to terminate the attached server.
   :commands lsp
   :init
     ; Integrate with company for autocompletion.
