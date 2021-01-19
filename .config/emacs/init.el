@@ -118,7 +118,9 @@
     ; A company-mode hook will automatically toggle company-mode when lsp-mode
     ; is toggled.
     (setq lsp-completion-provider :capf)
-    (setq lsp-keep-workspace-alive nil)
+    ; Integrate with flycheck for diagnostics.
+    ; No hooks, since flycheck is already enabled globally.
+    (setq lsp-diagnostics-provider :flycheck)
     (setq lsp-enable-snippet nil))
 ;; Vim emulation
 (use-package evil
