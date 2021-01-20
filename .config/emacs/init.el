@@ -147,7 +147,9 @@
 
 ;; Org mode
 (use-package org
-  :init (setq org-adapt-indentation nil))
+  :init
+    (setq org-link-descriptive nil)
+    (setq org-adapt-indentation nil))
 ;; Org-roam
 (use-package org-roam
   ; `M-x org-roam-mode RET` to enable.
