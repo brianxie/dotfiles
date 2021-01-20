@@ -75,6 +75,7 @@
   :config (centaur-tabs-mode 1))
 ;; Modeline
 (use-package doom-modeline
+  :init (setq doom-modeline-modal-icon nil)
   :config (doom-modeline-mode 1))
 ;; Modeline incremental search
 (use-package anzu
@@ -138,7 +139,9 @@
 (use-package evil-goggles
   :after (evil)
   :init (setq evil-goggles-duration 0.0625)
-  :config (evil-goggles-mode))
+  :config
+    (evil-goggles-use-diff-faces)
+    (evil-goggles-mode))
 
 ;; Auxiliary packages
 
