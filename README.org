@@ -1,6 +1,6 @@
-#+TITLE: Dotfiles
-#+AUTHOR: Brian Xie
-#+EMAIL: briancxie@gmail.com
+#+title: Dotfiles
+#+author: Brian Xie
+#+email: briancxie@gmail.com
 
 Portable repository of personal configuration files.
 
