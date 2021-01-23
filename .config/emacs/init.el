@@ -158,9 +158,9 @@
     (setq org-roam-db-update-method 'immediate)
     ; Overwrite the default org-roam template.
     (setq org-roam-capture-templates
-      '(("d" "default" plain (function org-roam--capture-get-point) "%?"
+      '(("d" "default" plain (function org-roam-capture--get-point) "%?"
         :file-name "${slug}"
-        :head "#+TITLE: ${title}\n"
+        :head "#+title ${title}\n"
         :immediate-finish t
         :unnarrowed t))))
 
