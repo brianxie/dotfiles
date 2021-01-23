@@ -160,7 +160,7 @@
     (setq org-roam-capture-templates
       '(("d" "default" plain (function org-roam-capture--get-point) "%?"
         :file-name "${slug}"
-        :head "#+title ${title}\n"
+        :head "#+title: ${title}\n"
         :immediate-finish t
         :unnarrowed t))))
 
