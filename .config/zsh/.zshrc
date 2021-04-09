@@ -30,10 +30,9 @@ autoload -Uz compinit
 compinit
 
 ## Theme
-PWD='%~'
 PROMPT_SYMBOL='❯'
 JOBS='%j'
-PROMPT="%B%F{blue}${PWD}%f%b %B${PROMPT_SYMBOL}%b "
+PROMPT="%B%F{blue}%~%f%b %B${PROMPT_SYMBOL}%b "
 RPROMPT="[%F{blue}${JOBS}%f]"
 
 ## Aliases
