@@ -21,7 +21,7 @@ git submodule update --remote --merge
 *** Emacs
 
 *** Tmux
-- Tune ~escape-time~
+- Tune =escape-time=
 
 *** Vim/Neovim
 - Add a bufferline
