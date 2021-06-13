@@ -39,6 +39,7 @@
 (column-number-mode 1)
 (global-display-line-numbers-mode 1)
 (global-hl-line-mode 1)
+(global-auto-revert-mode 1)
 
 ;; Add MELPA to list of package archives.
 (require 'package)
