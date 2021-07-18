@@ -156,6 +156,8 @@
   ; `M-x org-roam-mode RET` to enable.
   :commands org-roam-mode
   :init
+    ; Acknowledge the org-roam v2 warning.
+    (setq org-roam-v2-ack t)
     ; Overwrite the default org-roam template.
     (setq org-roam-capture-templates
       '(("d" "default" plain "%?"
