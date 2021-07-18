@@ -156,13 +156,12 @@
   ; `M-x org-roam-mode RET` to enable.
   :commands org-roam-mode
   :init
-    (setq org-roam-db-update-method 'immediate)
     ; Overwrite the default org-roam template.
     (setq org-roam-capture-templates
-      '(("d" "default" plain (function org-roam-capture--get-point) "%?"
-        :file-name "${slug}"
-        :head "#+title: ${title}\n"
+      '(("d" "default" plain "%?"
+        :if-new (file+head "${slug}.org" "#+title: ${title}\n")
         :immediate-finish t
-        :unnarrowed t))))
+        :unnarrowed t)))
+  :config (org-roam-setup))
 
 ;;; init.el ends here
