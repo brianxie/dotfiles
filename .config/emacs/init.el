@@ -164,6 +164,6 @@
         :if-new (file+head "${slug}.org" "#+title: ${title}\n")
         :immediate-finish t
         :unnarrowed t)))
-  :config (org-roam-setup))
+  :config (org-roam-db-autosync-enable))
 
 ;;; init.el ends here
