@@ -15,8 +15,8 @@ lua << EOF
   require('nvim-treesitter.configs').setup({
     -- Use `ensure_installed = "all"` to include every language parser.
     ensure_installed = {
-      "lua",
-      "vim",
+      'lua',
+      'vim',
     },
     highlight = { enable = true },
   })
