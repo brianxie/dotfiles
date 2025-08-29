@@ -16,14 +16,4 @@ To update submodules in an existing repository, execute:
 git submodule update --remote --merge
 #+end_src
 
-** Roadmap
-
-*** Emacs
-
-*** Tmux
-- Tune =escape-time=
-
-*** Vim/Neovim
-- Add a bufferline
-
-*** Zsh
+Some vim configs depend on =vim-plug=, which must be installed separately.

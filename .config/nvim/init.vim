@@ -1,7 +1,7 @@
 " Loads vim configuration. See ':h nvim-from-vim'.
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
+set runtimepath^=~/.config/vim runtimepath+=~/.config/vim/after
 let &packpath = &runtimepath
-source ~/.vim/vimrc
+source ~/.config/vim/vimrc
 
 " Lua heredoc
 lua << EOF
