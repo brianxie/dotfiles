@@ -1,0 +1,13 @@
+font-family = Overpass Mono
+font-size = 10
+font-thicken = true
+font-thicken-strength = 127
+theme = Atom One Dark
+cursor-style = block
+cursor-style-blink = false
+mouse-hide-while-typing = false
+window-inherit-working-directory = false
+window-inherit-font-size = false
+focus-follows-mouse = false
+confirm-close-surface = true
+shell-integration-features = no-cursor
