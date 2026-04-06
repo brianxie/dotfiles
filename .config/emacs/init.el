@@ -40,6 +40,10 @@
 (global-display-line-numbers-mode 1)
 (global-hl-line-mode 1)
 (global-auto-revert-mode 1)
+(defun mode-line-bell ()
+  (invert-face 'mode-line)
+  (run-with-timer 0.0625 nil #'invert-face 'mode-line))
+(setq-default ring-bell-function 'mode-line-bell)
 
 ;; Add MELPA to list of package archives.
 (require 'package)
