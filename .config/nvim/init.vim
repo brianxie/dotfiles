@@ -5,21 +5,23 @@ source ~/.config/vim/vimrc
 
 " Lua heredoc
 lua << EOF
-  vim.call('plug#begin')
-
-  vim.fn['plug#']('nvim-treesitter/nvim-treesitter')
-  vim.fn['plug#']('navarasu/onedark.nvim')
-
-  vim.call('plug#end')
-
-  require('nvim-treesitter.configs').setup({
-    -- Use `ensure_installed = "all"` to include every language parser.
-    ensure_installed = {
-      'lua',
-      'vim',
-    },
-    highlight = { enable = true },
+  vim.pack.add({
+    "https://github.com/navarasu/onedark.nvim",
+    "https://github.com/nvim-treesitter/nvim-treesitter",
   })
 
+  require('nvim-treesitter').install {
+    'lua',
+    'vim',
+  }
+  vim.api.nvim_create_autocmd('FileType', {
+    callback = function()
+      pcall(vim.treesitter.start)
+    end,
+  })
+
+  require('onedark').setup {
+    style = 'darker',
+  }
   require('onedark').load()
 EOF

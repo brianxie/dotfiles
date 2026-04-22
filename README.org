@@ -16,4 +16,5 @@ To update submodules in an existing repository, execute:
 git submodule update --remote --merge
 #+end_src
 
-Some vim configs depend on =vim-plug=, which must be installed separately.
+Some vim configs depend on =tree-sitter-cli=, which must be installed
+separately.
