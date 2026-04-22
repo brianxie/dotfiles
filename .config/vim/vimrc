@@ -29,8 +29,10 @@ set softtabstop=2
 set tabstop=2
 
 " Packages
-packadd! onedark.vim
-colorscheme onedark
+if !has('nvim')
+  packadd! onedark.vim
+  colorscheme onedark
+endif
 
 packadd! lightline.vim
 let g:lightline = { 'colorscheme': 'one' }
