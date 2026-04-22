@@ -6,8 +6,8 @@ source ~/.config/vim/vimrc
 " Lua heredoc
 lua << EOF
   vim.pack.add({
-    "https://github.com/navarasu/onedark.nvim",
-    "https://github.com/nvim-treesitter/nvim-treesitter",
+    'https://github.com/navarasu/onedark.nvim',
+    'https://github.com/nvim-treesitter/nvim-treesitter',
   })
 
   require('nvim-treesitter').install {
@@ -21,7 +21,7 @@ lua << EOF
   })
 
   require('onedark').setup {
-    style = 'darker',
+    style = 'dark',
   }
   require('onedark').load()
 EOF
