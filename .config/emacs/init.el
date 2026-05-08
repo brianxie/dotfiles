@@ -45,6 +45,9 @@
   (run-with-timer 0.0625 nil #'invert-face 'mode-line))
 (setq-default ring-bell-function 'mode-line-bell)
 
+;; Enable upgrades for built-in packages.
+(setq package-install-upgrade-built-in t)
+
 ;; Add MELPA to list of package archives.
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -90,9 +93,13 @@
 
 ;; Non-editing tools
 
-;; Completion
-(use-package ivy
-  :config (ivy-mode 1))
+;; Minibuffer
+(use-package vertico
+  :config (vertico-mode))
+(use-package marginalia
+  :config (marginalia-mode))
+(use-package orderless
+  :init (setq completion-styles '(orderless basic)))
 ;; Keybinding help
 (use-package which-key
   :init (setq which-key-idle-delay cl-least-positive-float)
