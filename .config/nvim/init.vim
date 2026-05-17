@@ -7,6 +7,7 @@ source ~/.config/vim/vimrc
 lua << EOF
   vim.pack.add({
     'https://github.com/navarasu/onedark.nvim',
+    'https://github.com/nvim-mini/mini.pick',
     'https://github.com/nvim-treesitter/nvim-treesitter',
   })
 
@@ -19,6 +20,9 @@ lua << EOF
       pcall(vim.treesitter.start)
     end,
   })
+
+  require('mini.pick').setup()
+  vim.keymap.set('n', '<leader>b', require('mini.pick').builtin.buffers)
 
   require('onedark').setup {
     style = 'dark',
