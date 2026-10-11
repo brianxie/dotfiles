@@ -28,6 +28,10 @@ set smarttab
 set softtabstop=2
 set tabstop=2
 
+" Line formatting
+set formatoptions=qjn
+set textwidth=80
+
 " Packages
 if !has('nvim')
   packadd! onedark.vim
